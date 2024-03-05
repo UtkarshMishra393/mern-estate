@@ -1,9 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const userRouter = require("./routes/user.route");
+const authRouter = require("./routes/auth.route");
+
 dotenv.config();
 const app = express();
-const userRouter = require("./routes/user.route");
+
+// Allow json as the input of the server
+app.use(express.json());
 
 mongoose
   .connect(process.env.MONGO)
@@ -19,3 +24,4 @@ app.listen(3000, () => {
 // Api Route
 
 app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
