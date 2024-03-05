@@ -1,8 +1,9 @@
 const User = require("../models/user.model");
 // bcryptjs is the npm package used for hashing the passwords
 const bcryptjs = require("bcryptjs");
+const errorHandler = require("../utils/error");
 
-const signup = async (req, res) => {
+const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
   // hashSync is a synchronous function to hash the password and
   // the value '10' here is the number of round of Salt.
@@ -13,11 +14,8 @@ const signup = async (req, res) => {
     await newUser.save();
     res.status(201).json("User Created Successfully!");
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err.message);
+    next(err);
   }
-  await newUser.save();
-  res.status(201).json("User Created Successfully!");
 };
 
 module.exports = signup;
