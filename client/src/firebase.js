@@ -14,4 +14,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+// The app contains all the information ragarding firebase.
 export const app = initializeApp(firebaseConfig);
