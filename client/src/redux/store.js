@@ -16,9 +16,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    user: persistedReducer,
-  },
+  reducer: persistedReducer,
   // we will add a middleware for making serializable check false
   // so we will not get error for  our variables.
   middleware: (getDefaultMiddleware) =>
