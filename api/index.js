@@ -3,12 +3,16 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const userRouter = require("./routes/user.route");
 const authRouter = require("./routes/auth.route");
+const cookieParser = require("cookie-parser");
 
 dotenv.config();
 const app = express();
 
 // Allow json as the input of the server
 app.use(express.json());
+
+// using it we can get the information from the cookie.
+app.use(cookieParser());
 
 mongoose
   .connect(process.env.MONGO)
