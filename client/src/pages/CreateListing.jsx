@@ -352,12 +352,12 @@ export default function CreateListing() {
               <div
                 key={url}
                 className="flex justify-between p-3
-                        border items-center bg-green-200 rounded-xl"
+                        border items-center bg-cyan-200 rounded-xl"
               >
                 <img
                   src={url}
                   alt="listing image"
-                  className="w-20 h-20 object-contain rounded-lg border border-green-500 bg-white"
+                  className="w-20 h-20 object-contain rounded-lg border border-cyan-500 bg-white"
                 />
                 <button
                   className="p-3 text-red-700 rounded-lg uppercase
