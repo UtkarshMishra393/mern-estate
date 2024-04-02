@@ -23,7 +23,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-const __direname = path.resolve();
+const _dirname = path.resolve();
 
 app.listen(3000, () => {
   console.log("Server is running on port 300 !!");
@@ -35,10 +35,10 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-app.use(express.static(path.join(__dirname, "/client/dist/")));
+app.use(express.static(path.join(_dirname, "/client/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/dist/index.html"));
+  res.sendFile(path.join(_dirname, "client", "dist", "index.html"));
 });
 
 // Creating middleware to handle the error response
