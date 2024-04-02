@@ -89,7 +89,7 @@ export default function Home() {
             <div>
               <div className='my-3'>
                 <h2 className='text-2xl font-semibold text-slate-600'>Recent Offers</h2>
-                <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>
+                <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=all&parking=false&furnished=false&offer=true&sort=created_at&order=desc'}>
                   Show more offers
                 </Link>
               </div>
@@ -108,7 +108,7 @@ export default function Home() {
             <div>
               <div className='my-3'>
                 <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-                <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>
+                <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent&parking=false&furnished=false&offer=false&sort=created_at&order=desc'}>
                   Show more places for rent
                 </Link>
               </div>
@@ -127,7 +127,7 @@ export default function Home() {
             <div>
               <div className='my-3'>
                 <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sales</h2>
-                <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>
+                <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale&parking=false&furnished=false&offer=false&sort=created_at&order=desc'}>
                   Show more places for sale
                 </Link>
               </div>

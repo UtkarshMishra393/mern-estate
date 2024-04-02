@@ -121,7 +121,7 @@ export default function Listing() {
               <span className="text-yellow-600 font-serif font-semibold text-3xl">
                 {listing.description[0]}
               </span>
-              {listing.description}
+              {listing.description.slice(1)}
             </p>
             <ul className="font-semibold text-sm
               text-green-900 flex flex-wrap  items-center gap-4">

@@ -32,6 +32,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  const [countShowListing, setCountShowListing] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -135,18 +136,23 @@ export default function Profile() {
   };
 
   const handleShowListings = async () => {
-    try {
-      setShowListingsError(false);
-      const res = await fetch(`/api/user/listings/${currentUser._id}`);
-      const data = await res.json();
-      if (data.success == false) {
+    setCountShowListing(prevCount => prevCount+1);
+    if(countShowListing%2==0){
+      try {
+        setShowListingsError(false);
+        const res = await fetch(`/api/user/listings/${currentUser._id}`);
+        const data = await res.json();
+        if (data.success == false) {
+          setShowListingsError(true);
+          return;
+        }
+        console.log(data);
+        setUserListings(data);
+      } catch (error) {
         setShowListingsError(true);
-        return;
       }
-      console.log(data);
-      setUserListings(data);
-    } catch (error) {
-      setShowListingsError(true);
+    } else{
+      setUserListings([]);
     }
   };
 
