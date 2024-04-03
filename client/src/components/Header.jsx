@@ -31,7 +31,8 @@ export default function Header() {
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className="hover:shadow-md font-bold text-sm sm:text-xl flex flex-wrap">
+          <h1 className="hover:shadow-md font-bold text-sm sm:text-xl flex flex-nowrap">
+            <span><img src="https://static.vecteezy.com/system/resources/thumbnails/008/124/777/small_2x/real-estate-logo-house-logo-home-logo-sign-symbol-free-vector.jpg" className="h-4 w-4 md:h-5 md:w-5 my-1 mx-2 rounded-md" alt="logo" /></span>
             <span className="text-slate-500">Mishra's</span>
             <span className="text-slate-700">Estate</span>
           </h1>
